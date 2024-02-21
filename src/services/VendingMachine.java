@@ -48,7 +48,15 @@ public class VendingMachine {
     public void setProducts(List<Product> products) {
         this.products = products;
     }
+    /**
+     * @apiNote Добавление продукта в аппарат 
+     * @param product обьект добавляемого продукта
+     */
     public void addProduct(Product product){
+        if (product.getPrice()<=0) {
+            product.setPrice(100);
+            
+        }
         this.products.add(product);
     }
     
